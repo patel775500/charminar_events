@@ -1,11 +1,15 @@
 {
   "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist/spa" } }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist/spa" }
+    }
   ],
-  "env": {
-    "NODE_VERSION": "18"
-  },
+  "env": { "NODE_VERSION": "18" },
+  "installCommand": "npm install",
+  "buildCommand": "npm run build:client",
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/:path*" }
   ],
